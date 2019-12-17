@@ -1,0 +1,83 @@
+<div class="container">
+    <form>
+    <p class="h4 text-center">Enter Roll Number:</p>
+    
+    <div class="form-group border border-dark">
+    
+       <div class="form-group row">
+       
+            <label class="col-sm-4">Enter Roll Number :</label>
+            <div class="col-sm-6">
+            <input type="text" name="rollnum" class="form-control" [(ngModel)] ="result.rollnum" placeholder="Roll Num">
+        </div>
+          </div>
+
+          <div class="form-group row" *ngIf="isRollNumPresent">
+       
+              <label class="col-sm-4">Name :</label>
+              <div class="col-sm-6">
+              <input type="text" name="name" class="form-control" [(ngModel)] ="result.stName">
+          </div>
+            </div>
+        
+                   <div class="form-group text-center">
+            <button (click)="getStudentId()">Get Student Details</button>
+          </div>
+    </div>
+    
+    </form>
+    </div>
+<div class="container" *ngIf="isRollNumPresent">
+  
+        <form>
+        <p class="h4 text-center">Result</p>
+        
+        <div class="form-group border border-dark">
+        
+           <div class="form-group row">
+           
+                <label class="col-sm-4">Maths</label>
+                <div class="col-sm-6">
+                <input type="text" name="maths" class="form-control" [(ngModel)] ="result.maths" placeholder="Maths">
+            </div>
+              </div>
+            
+              <div class="form-group row">
+                  <label class="col-sm-4">English</label>
+                  <div class="col-sm-6">
+          <input type="text" name="english" class="form-control" [(ngModel)] ="result.english" placeholder="English">
+        </div>
+        </div>
+          
+        <div class="form-group row">
+            <label class="col-sm-4">Hindi</label>
+            <div class="col-sm-6"> <input type="text" name="hindi"  class="form-control" [(ngModel)] ="result.hindi" placeholder="Hindi">
+        </div>
+        </div>
+        
+        <div class="form-group row">
+            <label class="col-sm-4">Social Studies</label>
+            <div class="col-sm-6">
+          <input type="text" name="socialstudies"  class="form-control" [(ngModel)] ="result.socialstudies" placeholder="Social Studies">
+        </div>
+        </div>
+        
+        <div class="form-group row">
+            <label class="col-sm-4">Science</label>
+            <div class="col-sm-6">  <input type="text" name="science"  class="form-control" [(ngModel)] ="result.science" placeholder="Science">
+        </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-4">Year</label>
+          <div class="col-sm-6">  <input type="text" name="year"  class="form-control" [(ngModel)] ="result.year" placeholder="Year">
+      </div>
+      </div>
+        <div class="form-group text-center">
+                <button (click)="saveResults()">Submit</button>
+              </div>
+        </div>
+        
+        </form>
+        </div>
+
+       

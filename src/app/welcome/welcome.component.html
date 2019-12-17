@@ -1,0 +1,48 @@
+<p>
+    welcome {{stud.stName}} !!!!!!!!!!!!!!!!!!
+  </p>
+
+  <div class="container">
+    <table class="table">
+      <th>Name</th>
+      <th>Roll Num</th>
+      <tr>
+        <td>{{stud.stName}}</td>
+        <td>{{stud.rollNum}}</td>
+        
+      </tr>
+    </table>
+    </div>
+    <!-- <div class="container col-sm-4">
+      <div style="display: block">
+              <canvas baseChart
+                      [data]="pieChartData"
+                      [labels]="pieChartLabels"
+                      [chartType]="pieChartType"></canvas>
+            </div>
+  </div> -->
+
+
+  <!-- <div class="container col-sm-8">
+    <div style="display: block">
+            <canvas baseChart
+                    [data]="pieChartData2"
+                    [labels]="pieChartLabels2"
+                    [chartType]="pieChartType"></canvas>
+          </div>
+</div> -->
+
+
+
+<div class="container col-sm-8">
+    <div class="chart-wrapper">
+    <canvas baseChart 
+    [datasets]="barChartData"
+    [labels]="barChartLabels"
+    [options]="barChartOptions"
+    [plugins]="barChartPlugins"
+    [legend]="barChartLegend"
+    [chartType]="barChartType">
+  </canvas>
+</div> 
+</div> 

@@ -1,0 +1,100 @@
+<div class="container" style="width: 50%; margin: 200px auto; height: 60px;">
+
+<p class="h4 text-center">Student Form</p>
+<div class="form-horizontal">
+<div class="form-group border border-dark">
+
+   <div class="form-inline">
+          
+        <label class="col-sm-4">Name</label>
+        <div class="col-sm-6">
+        <input type="text" name="stName" class="form-control" [(ngModel)] ="stud.stName" placeholder="Student Name">
+    </div>
+      </div>
+    
+<br>
+      <div class="form-inline">
+          <label class="col-sm-4">Select class</label>
+          <div class="col-sm-3">
+      <ng-multiselect-dropdown-angular7
+        [placeholder]=" 'Select Class'"
+        [data]="dropdownListClass"
+        [(ngModel)]="stud.stClass"
+        [settings]="dropdownSettingsClass"
+        (onSelect)="onItemSelectClass($event)"
+        (onSelectAll)="onSelectAllClass($event)"
+        [ngModelOptions]="{standalone: true}"
+      >
+      </ng-multiselect-dropdown-angular7>
+    </div>
+      </div>
+      <br>
+      <!-- <div class="form-inline">
+          <label class="col-sm-4">Subject</label>
+          <div class="col-sm-6">
+  <input type="text" name="stSubject" class="form-control" [(ngModel)] ="stud.stSubject" placeholder="Subject">
+</div>
+</div> -->
+  
+<div class="form-inline">
+    <label class="col-sm-4">User Name</label>
+    <div class="col-sm-6"> <input type="text" name="userName"  class="form-control" [(ngModel)] ="stud.userName" placeholder=" User Name">
+</div>
+</div>
+<br>
+<div class="form-inline">
+    <label class="col-sm-4">User Password</label>
+    <div class="col-sm-6">
+  <input type="text" name="userPwd"  class="form-control" [(ngModel)] ="stud.userPwd" placeholder="Password">
+</div>
+</div>
+<br>
+<div class="form-inline">
+    <label class="col-sm-4">Contact Number</label>
+    <div class="col-sm-6">  <input type="text" name="userMobNum"  class="form-control" [(ngModel)] ="stud.userMobNum" placeholder="Mobile Number">
+</div>
+</div>
+<br>
+<div class="form-inline">
+    <label class="col-sm-4">Select Hobbies</label>
+    <div class="col-sm-3"> 
+<ng-multiselect-dropdown-angular7
+  [placeholder]="'Select Hobbies'"
+  [data]="dropdownListHobbies"
+  [(ngModel)]="stud.sportArray"
+  [settings]="dropdownSettingsHobbies"
+  (onSelect)="onItemSelectHobbies($event)"
+  (onSelectAll)="onSelectAllHobbies($event)"
+  [ngModelOptions]="{standalone: true}"
+>
+</ng-multiselect-dropdown-angular7>
+</div>
+</div>
+<br>
+<div class="form-group text-center">
+  <button (click)="saveAllStudents()">Submit</button>
+</div>
+</div>
+</div>
+
+</div>
+
+  <div class="container" *ngIf="isResponseSuccess">
+  <table class="table">
+    <th>Name</th>
+    <th>Subject</th>
+    <th>Roll Num</th>
+    <th>Hobbies</th>
+    <tr>
+      <td>{{stud.stName}}</td>
+     
+      <td>{{stud.stSubject}}</td>
+      <td>{{stud.rollNum}}</td>
+
+      <td></td>
+      <td><button (click)="editStudent()"> Edit</button></td>
+    </tr>
+  </table>
+  </div> 
+ 
+  
